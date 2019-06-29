@@ -40,7 +40,7 @@ class Dashboard extends React.Component {
             <React.Fragment>
             <div>Data: {this.state.socketData}</div>
             <div>Status: {this.state.socketStatus}</div>
-            <div onClick={this.handleEmit}> Click to Emit</div>
+            <div onClick={this.handleEmit}> Start/Stop</div>
             </React.Fragment>
         )
     }
