@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/socketapp/node_modules
+/socketapp/.pnp
+/socketapp/.pnp.js
+
+# testing
+/socketapp/coverage
+
+# production
+/socketapp/build
+
+# misc
+/socketapp/.DS_Store
+/socketapp/.env.local
+/socketapp/.env.development.local
+/socketapp/.env.test.local
+/socketapp/.env.production.local
+
+/socketapp/npm-debug.log*
+/socketapp/yarn-debug.log*
+/socketapp/yarn-error.log*
