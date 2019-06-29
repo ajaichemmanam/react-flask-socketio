@@ -9,8 +9,7 @@ Click on "Start/Stop" to start or stop sending data from the server <br />
 <br />
 <br />
 ## Requirements
-```
-npm i socket.io-client
-
+Requires Python 3+
+<br />
+npm i socket.io-client <br />
 pip install Flask-SocketIO
-```
