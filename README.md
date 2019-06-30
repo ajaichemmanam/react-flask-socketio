@@ -12,4 +12,6 @@ Click on "Start/Stop" to start or stop sending data from the server <br />
 Requires Python 3+
 <br />
 npm i socket.io-client <br />
-pip install Flask-SocketIO
+
+pip install Flask-SocketIO <br />
+pip install gevent-websocket
