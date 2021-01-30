@@ -1,4 +1,3 @@
-# from flask_socketio import SocketIO, emit
 from flask_socketio import SocketIO, emit
 from flask import Flask
 from flask_cors import CORS
@@ -25,16 +24,11 @@ class DataThread(Thread):
         print("Initialising")
         try:
             while not thread_stop_event.isSet():
-                # socketio.emit('responseMessage', {'waterTemperatureC': waterTempC, 'waterTemperatureF': waterTempF, 'conductivity':round(random()*10, 3), 'salinity':round(random()*10, 3), 'luxVisible':luxVisible, 'luxIR':luxIR, 'waterLevel':waterLevel})
-                
                 socketio.emit('responseMessage', {'temperature': round(random()*10, 3)})
                 sleep(self.delay)
         except KeyboardInterrupt:
             # kill()
             print("Keyboard  Interrupt")
-        # while not thread_stop_event.isSet():
-            # socketio.emit('responseMessage', {'temperature': round(random()*10, 3), 'humidity': round(random()*10, 3),'pH': round(random()+ 7, 3), 'lux':round(random()*10, 3)}, namespace='/devices')
-            # sleep(self.delay)
     def run(self):
         self.dataGenerator()
 # Handle the webapp connecting to the websocket
@@ -54,13 +48,6 @@ def test_connect():
 def test_connect2():
     print('someone connected to websocket!')
     emit('responseMessage', {'data': 'Connected devices! ayy'})
-    # need visibility of the global thread object
-    # global thread
-    # if not thread.isAlive():
-    #     print("Starting Thread")
-    #     thread = DataThread()
-    #     thread.start()
-    
 
 # Handle the webapp sending a message to the websocket
 @socketio.on('message')
