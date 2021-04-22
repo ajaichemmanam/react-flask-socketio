@@ -10,7 +10,8 @@ from geventwebsocket.handler import WebSocketHandler
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+socketio = SocketIO(app, cors_allowed_origins='*')
 CORS(app)
 # Server functionality for receiving and storing data from elsewhere, not related to the websocket
 #Data Generator Thread
